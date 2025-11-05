@@ -2,14 +2,14 @@
 
 :root {
   /*COLORS*/
-  --primary-color: #f74d01;
-  --background-primary-color: rgb(232, 201, 144);
-  --primary-color-border: rgb(184, 147, 80);
-  --primary-color-light: #ffb40a;
-  --secondary-color: #014425;
-  --text-dark: #0a0a0a;
-  --text-light: #737373;
-  --white: #ffffff;
+  --primary-color: #1d1207;
+  --background-primary-color: #c2a074;
+  --primary-color-border: #2f1708;
+  --primary-color-light: #c2935a;
+  --secondary-color: #824413;
+  --text-dark: #120d04;
+  --text-light: #dcbe94;
+  --white: #e9dbc3;
   /*RADIUS*/
   --max-width: 1200px;
   --small-radius: 8px;
@@ -34,6 +34,28 @@ html {
   padding-block: 100px;
 }
 
+.order-button {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 5px 8px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.order-button:hover {
+  background-color: var(--secondary-color);
+  transform: scale(1.05);
+}
+
+.logo {
+  width: 280px;
+  height: auto;
+  display: block;
+  margin-top: -10px;
+}
+
 .primary-button,
 .light-button {
   padding: 8px 14px;
@@ -45,18 +67,31 @@ html {
   align-items: center;
   gap: 4px;
   text-decoration: none;
+  align-items: center;
+  gap: 8px;
 }
 
 .primary-button {
   background: var(--primary-color);
   color: var(--white);
   border: 4px solid var(--primary-color);
+  transition: background 0.3s, transform 0.2s;
+}
+.primary-button:hover {
+  background-color: var(--secondary-color);
+  transform: scale(1.05);
 }
 
 .light-button {
   background: var(--white);
   color: var(--primary-color);
   border: 4px solid var(--primary-color);
+  transition: background 0.3s, transform 0.2s;
+}
+.light-button:hover {
+  color: var(--white);
+  background-color: var(--secondary-color);
+  transform: scale(1.05);
 }
 
 /*HEADER*/
@@ -69,7 +104,11 @@ html {
   align-items: center;
   position: fixed;
   width: 100%;
-  background: linear-gradient(to right, white, var(--background-primary-color));
+  background: linear-gradient(
+    to right,
+    var(--white),
+    var(--background-primary-color)
+  );
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -89,21 +128,21 @@ html {
 .header_menus li a {
   text-decoration: none;
   font-weight: 600;
-  color: var(--secondary-color);
+  color: var(--primary-color);
   font-size: 20px;
   transition: 300ms ease;
   position: relative;
 }
 
 .header_menus li a:hover {
-  color: var(--primary-color);
+  color: var(--secondary-color);
 }
 
 .header_menus li a::after {
   position: absolute;
   width: 100%;
   height: 2px;
-  background: var(--primary-color);
+  background: var(--secondary-color);
   left: 0;
   bottom: -6px;
 }
@@ -115,7 +154,7 @@ html {
 /*SECTION HOME*/
 .section-home {
   padding-top: 130px;
-  border: solid;
+  /* border: solid;*/
   display: flex;
   align-items: center;
   background: linear-gradient(
@@ -123,7 +162,6 @@ html {
     var(--white),
     var(--background-primary-color)
   );
-
   gap: 80px;
   min-height: 100dvh;
   justify-content: space-between;
@@ -136,7 +174,7 @@ html {
 }
 
 .section-home_title span {
-  color: var(--primary-color);
+  color: var(--secondary-color);
 }
 
 .section-home_buttons {
@@ -150,15 +188,97 @@ html {
   max-width: 600px;
 }
 
+/*SECTION SIGNATURE*/
+.section-about {
+  background: var(--white);
+  color: var(--text-dark);
+}
+.section-menu_signature {
+  color: var(--secondary-color);
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 64px;
+  flex-wrap: wrap;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+.signature-menu_card {
+  border: 3px solid var(--primary-color-border);
+  width: 280px;
+  border-radius: var(--medium-radius);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 200px;
+  justify-content: end;
+  margin-top: 64px;
+  cursor: pointer;
+  padding: 24px;
+}
+
+.section-menu_signature :hover {
+  background: var(--primary-color-light);
+}
+
+.signature-menu_card-image {
+  width: 100%;
+  aspect-ratio: 1/1;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.signature-menu_card-title {
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+.signature-menu_card-rating {
+  align-items: center;
+  margin-top: 14px;
+  width: 100%;
+  text-align: center;
+}
+.signature-menu_card-rating i {
+  color: #ffb40a;
+  font-size: 20px;
+}
+
+.signature-menu_card-rating span {
+  margin-left: 4px;
+  font-size: 20px;
+}
+
+.signature-menu_card-footer {
+  color: var(--primary-color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 14px;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.signature-menu_card-price {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
 /*SECTION MENU*/
+.section-menus {
+  background: var(--primary-color-light);
+}
 .section-menu_title {
   font-family: sans-serif;
   font-size: 50px;
-  color: var(--primary-color);
+  color: var(--secondary-color);
   text-align: center;
 }
 
 .section-menu_description {
+  color: var(--primary-color-border);
   font-size: 20px;
   text-align: center;
 }
@@ -173,7 +293,7 @@ html {
 }
 
 .section-menus-card {
-  background: #fff;
+  background: var(--white);
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   width: 260px;
@@ -186,6 +306,7 @@ html {
   transform: translateY(-10px);
   background-color: var(--primary-color);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  color: var(--white);
 }
 
 .section-menus_image {
