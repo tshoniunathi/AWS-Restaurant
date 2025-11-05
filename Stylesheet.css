@@ -319,3 +319,65 @@ html {
   font-size: 24px;
   margin-top: 8px;
 }
+
+/* SECTION ABOUT*/
+.section-about_menu {
+  display: flex;
+  gap: 40px;
+  padding-bottom: 80px;
+
+  background: linear-gradient(
+    to right,
+    var(--white),
+    var(--background-primary-color)
+  );
+}
+
+.section-about_title {
+  color: var(--secondary-color);
+  padding-bottom: 25px;
+}
+
+.section-about_description {
+  color: var(--primary-color-border);
+  padding-bottom: 10px;
+  font-size: 18px;
+}
+
+.section-about_content {
+  padding-top: 120px;
+  max-width: 600px;
+}
+
+.section-about_image {
+  max-width: 350px;
+  object-fit: scale-down;
+}
+
+.section-about_statistics {
+  display: flex;
+  gap: 24px;
+  margin-top: 16px;
+  margin-bottom: 32px;
+}
+
+.section-about_stat {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.section-about_stat-number {
+  font-size: 36px;
+  color: var(--secondary-color);
+}
+
+.section-about_stat-desc {
+  font-size: 18px;
+  font-weight: 500;
+  opacity: 0.5;
+}
+
+.section-about_stat-title {
+  color: var(--primary-color-border);
+}
